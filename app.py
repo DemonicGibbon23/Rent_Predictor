@@ -31,8 +31,51 @@ cities = load_cities()
 
 st.markdown("""
 <style>
-  .stApp { background: linear-gradient(180deg,#f8fafc,#ffffff); }
-  .big-number { font-size:28px; font-weight:700; }
+    :root {
+        --bg-1: #0b1220;
+        --bg-2: #0f172a;
+        --card: #111827;
+        --muted: #94a3b8;
+        --text: #e5e7eb;
+        --accent: #38bdf8;
+    }
+
+    html, body, .stApp, .block-container, .main {
+        background: linear-gradient(180deg, var(--bg-1), var(--bg-2)) !important;
+        color: var(--text) !important;
+    }
+
+    h1, h2, h3, p, label, span, div, a {
+        color: var(--text) !important;
+    }
+
+    .stCaption, .stMarkdown p {
+        color: var(--muted) !important;
+    }
+
+    .stForm {
+        background: var(--card) !important;
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 14px;
+        padding: 16px;
+    }
+
+    .stTextInput input, .stNumberInput input, .stSelectbox div[data-baseweb="select"] {
+        background: #0b1220 !important;
+        color: var(--text) !important;
+        border-radius: 10px !important;
+        border: 1px solid rgba(148, 163, 184, 0.35) !important;
+    }
+
+    .stButton button {
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8) !important;
+        color: #0b1220 !important;
+        border: none !important;
+        border-radius: 12px !important;
+        font-weight: 700 !important;
+    }
+
+    .big-number { font-size:28px; font-weight:700; color: var(--accent) !important; }
 </style>
 """, unsafe_allow_html=True)
 
